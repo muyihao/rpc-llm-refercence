@@ -1,335 +1,0 @@
-2025-11-18 01:10:21,129	INFO worker.py:2004 -- Started a local Ray instance. View the dashboard at [1m[32mhttp://127.0.0.1:8265 [39m[22m
-/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_private/worker.py:2052: FutureWarning: Tip: In future versions of Ray, Ray will no longer override accelerator visible devices env var if num_gpus=0 or num_gpus=None (default). To enable this behavior and turn off this error message, set RAY_ACCEL_ENV_VAR_OVERRIDE_ON_ZERO=0
-  warnings.warn(
-2025-11-18 01:10:22,379	INFO worker.py:1851 -- Calling ray.init() again after it has already been called.
-2025-11-18 01:10:22,640	WARNING util.py:578 -- The argument ``compute`` is deprecated in Ray 2.9. Please specify argument ``concurrency`` instead. For more information, see https://docs.ray.io/en/master/data/transforming-data.html#stateful-transforms.
-2025-11-18 01:10:22,643	INFO logging.py:293 -- Registered dataset logger for dataset dataset_4_0
-2025-11-18 01:10:22,654	INFO streaming_executor.py:159 -- Starting execution of Dataset dataset_4_0. Full logs are in /tmp/ray/session_2025-11-18_01-10-18_937689_23417/logs/ray-data
-2025-11-18 01:10:22,654	INFO streaming_executor.py:160 -- Execution plan of Dataset dataset_4_0: InputDataBuffer[Input] -> TaskPoolMapOperator[ReadRange->Map(<lambda>)->Map(_preprocess)] -> ActorPoolMapOperator[MapBatches(RPCInferenceStageUDF)] -> TaskPoolMapOperator[Map(_postprocess)]
-Running 0: 0.00 row [00:00, ? row/s][2025-11-18 01:10:22,685 E 23417 174011] core_worker.cc:2153: Actor with class name: 'MapWorker(MapBatches(RPCInferenceStageUDF))' and ID: '67eeace942bc6f39258ff6ea01000000' has constructor arguments in the object store and max_restarts > 0. If the arguments in the object store go out of scope or are lost, the actor restart will fail. See https://github.com/ray-project/ray/issues/53727 for more details.
-                                    Running 0: 0.00 row [00:01, ? row/s]                                    Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m Exception raised in creation task: The actor died because of an error raised in its creation task, [36mray::MapWorker(MapBatches(RPCInferenceStageUDF)).__init__()[39m (pid=23450, ip=127.0.0.1, actor_id=b9ed1d8401a58d72e86ec64a01000000, repr=MapWorker(MapBatches(RPCInferenceStageUDF)))
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m RuntimeError: no running event loop
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m During handling of the above exception, another exception occurred:
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [36mray::MapWorker(MapBatches(RPCInferenceStageUDF)).__init__()[39m (pid=23450, ip=127.0.0.1, actor_id=b9ed1d8401a58d72e86ec64a01000000, repr=MapWorker(MapBatches(RPCInferenceStageUDF)))
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/operators/actor_pool_map_operator.py", line 538, in __init__
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     self._map_transformer.init()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/operators/map_transformer.py", line 193, in init
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     self._init_fn()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 360, in init_fn
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     ray.data._map_actor_context = _MapActorContext(
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m                                   ^^^^^^^^^^^^^^^^^
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 92, in __init__
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     self._init_async()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 96, in _init_async
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     loop = get_or_create_event_loop()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_common/utils.py", line 79, in get_or_create_event_loop
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     return asyncio.get_event_loop_policy().get_event_loop()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/uvloop/__init__.py", line 206, in get_event_loop
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     raise RuntimeError(
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m RuntimeError: There is no current event loop in thread 'MainThread'.
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,940 E 23450 174770] logging.cc:125: Stack trace: 
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m  0   _raylet.so                          0x0000000105ef0ba8 _ZN3raylsERNSt3__113basic_ostreamIcNS0_11char_traitsIcEEEERKNS_10StackTraceE + 84 ray::operator<<()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 1   _raylet.so                          0x0000000105ef0d70 _ZN3ray16TerminateHandlerEv + 172 ray::TerminateHandler()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 2   libc++abi.dylib                     0x000000019c451710 _ZSt11__terminatePFvvE + 16 std::__terminate()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 3   libc++abi.dylib                     0x000000019c45166c _ZSt9terminatev + 36 std::terminate()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 4   _raylet.so                          0x00000001053a0518 _ZNSt3__120__shared_ptr_emplaceIN3ray4core15BoundedExecutorENS_9allocatorIS3_EEE16__on_zero_sharedEv + 88 std::__1::__shared_ptr_emplace<>::__on_zero_shared()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 5   _raylet.so                          0x000000010529494c _ZNSt3__120__shared_ptr_emplaceIN3ray4core23ConcurrencyGroupManagerINS2_10FiberStateEEENS_9allocatorIS5_EEE16__on_zero_sharedEv + 400 std::__1::__shared_ptr_emplace<>::__on_zero_shared()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 6   _raylet.so                          0x0000000105293d80 _ZN3ray4core12TaskReceiverD2Ev + 140 ray::core::TaskReceiver::~TaskReceiver()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 7   _raylet.so                          0x0000000105264c8c _ZN3ray4core10CoreWorkerD2Ev + 816 ray::core::CoreWorker::~CoreWorker()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 8   _raylet.so                          0x00000001052b380c _ZN3ray4core21CoreWorkerProcessImpl26RunWorkerTaskExecutionLoopEv + 292 ray::core::CoreWorkerProcessImpl::RunWorkerTaskExecutionLoop()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 9   _raylet.so                          0x00000001052b36c0 _ZN3ray4core17CoreWorkerProcess20RunTaskExecutionLoopEv + 32 ray::core::CoreWorkerProcess::RunTaskExecutionLoop()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 10  _raylet.so                          0x0000000105142efc _ZL50__pyx_pw_3ray_7_raylet_10CoreWorker_5run_task_loopP7_objectPKS0_lS0_ + 40 __pyx_pw_3ray_7_raylet_10CoreWorker_5run_task_loop()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 11  python3.11                          0x0000000100536f18 PyObject_Vectorcall + 76 PyObject_Vectorcall
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 12  python3.11                          0x0000000100639d38 _PyEval_EvalFrameDefault + 45376 _PyEval_EvalFrameDefault
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 13  python3.11                          0x000000010062dc1c PyEval_EvalCode + 204 PyEval_EvalCode
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 14  python3.11                          0x0000000100694080 run_mod + 144 run_mod
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 15  python3.11                          0x0000000100693ad0 _PyRun_SimpleFileObject + 1256 _PyRun_SimpleFileObject
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 16  python3.11                          0x0000000100692b80 _PyRun_AnyFileObject + 252 _PyRun_AnyFileObject
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 17  python3.11                          0x00000001006ba248 pymain_run_file + 352 pymain_run_file
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 18  python3.11                          0x00000001006b9adc Py_RunMain + 2536 Py_RunMain
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 19  python3.11                          0x00000001006baf6c pymain_main + 1284 pymain_main
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 20  python3.11                          0x00000001004d8c38 main + 56 main
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 21  dyld                                0x000000019c11c274 start + 2840 start
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m *** SIGABRT received at time=1763399423 ***
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m PC: @        0x19c463720  (unknown)  __pthread_kill
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x105f1dca8  (unknown)  absl::lts_20230802::AbslFailureSignalHandler()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x19c4d2e04  (unknown)  _sigtramp
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x19c49bf70  (unknown)  pthread_kill
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x19c3a8908  (unknown)  abort
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x105ef0d90  (unknown)  ray::TerminateHandler()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x19c451710  (unknown)  std::__terminate()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x19c45166c  (unknown)  std::terminate()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x1053a0518  (unknown)  std::__1::__shared_ptr_emplace<>::__on_zero_shared()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x10529494c  (unknown)  std::__1::__shared_ptr_emplace<>::__on_zero_shared()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x105293d80  (unknown)  ray::core::TaskReceiver::~TaskReceiver()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x105264c8c  (unknown)  ray::core::CoreWorker::~CoreWorker()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x1052b380c  (unknown)  ray::core::CoreWorkerProcessImpl::RunWorkerTaskExecutionLoop()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x1052b36c0  (unknown)  ray::core::CoreWorkerProcess::RunTaskExecutionLoop()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x105142efc  (unknown)  __pyx_pw_3ray_7_raylet_10CoreWorker_5run_task_loop()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x100536f18  (unknown)  PyObject_Vectorcall
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x100639d38  (unknown)  _PyEval_EvalFrameDefault
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x10062dc1c  (unknown)  PyEval_EvalCode
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x100694080  (unknown)  run_mod
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x100693ad0  (unknown)  _PyRun_SimpleFileObject
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x100692b80  (unknown)  _PyRun_AnyFileObject
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x1006ba248  (unknown)  pymain_run_file
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x1006b9adc  (unknown)  Py_RunMain
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x1006baf6c  (unknown)  pymain_main
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x1004d8c38  (unknown)  main
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m     @        0x19c11c274  (unknown)  start
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474: *** SIGABRT received at time=1763399423 ***
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474: PC: @        0x19c463720  (unknown)  __pthread_kill
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474:     @        0x105f1ddc8  (unknown)  absl::lts_20230802::AbslFailureSignalHandler()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474:     @        0x19c4d2e04  (unknown)  _sigtramp
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474:     @        0x19c49bf70  (unknown)  pthread_kill
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474:     @        0x19c3a8908  (unknown)  abort
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474:     @        0x105ef0d90  (unknown)  ray::TerminateHandler()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474:     @        0x19c451710  (unknown)  std::__terminate()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474:     @        0x19c45166c  (unknown)  std::terminate()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474:     @        0x1053a0518  (unknown)  std::__1::__shared_ptr_emplace<>::__on_zero_shared()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474:     @        0x10529494c  (unknown)  std::__1::__shared_ptr_emplace<>::__on_zero_shared()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474:     @        0x105293d80  (unknown)  ray::core::TaskReceiver::~TaskReceiver()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,941 E 23450 174770] logging.cc:474:     @        0x105264c8c  (unknown)  ray::core::CoreWorker::~CoreWorker()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x1052b380c  (unknown)  ray::core::CoreWorkerProcessImpl::RunWorkerTaskExecutionLoop()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x1052b36c0  (unknown)  ray::core::CoreWorkerProcess::RunTaskExecutionLoop()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x105142efc  (unknown)  __pyx_pw_3ray_7_raylet_10CoreWorker_5run_task_loop()
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x100536f18  (unknown)  PyObject_Vectorcall
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x100639d38  (unknown)  _PyEval_EvalFrameDefault
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x10062dc1c  (unknown)  PyEval_EvalCode
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x100694080  (unknown)  run_mod
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x100693ad0  (unknown)  _PyRun_SimpleFileObject
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x100692b80  (unknown)  _PyRun_AnyFileObject
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x1006ba248  (unknown)  pymain_run_file
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x1006b9adc  (unknown)  Py_RunMain
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x1006baf6c  (unknown)  pymain_main
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x1004d8c38  (unknown)  main
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m [2025-11-18 01:10:23,942 E 23450 174770] logging.cc:474:     @        0x19c11c274  (unknown)  start
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m Fatal Python error: Aborted
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m Stack (most recent call first):
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_private/worker.py", line 1042 in main_loop
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_private/workers/default_worker.py", line 322 in <module>
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m 
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23450)[0m Extension modules: msgpack._cmsgpack, psutil._psutil_osx, psutil._psutil_posix, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, yaml._yaml, uvloop.loop, ray._raylet, regex._regex, numpy._core._multiarray_umath, numpy.linalg._umath_linalg, pyarrow.lib, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._pcg64, numpy.random._mt19937, numpy.random._generator, numpy.random._philox, numpy.random._sfc64, numpy.random.mtrand, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pyarrow._compute, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, pyarrow._fs, pyarrow._azurefs, pyarrow._hdfs, pyarrow._gcsfs, pyarrow._s3fs, pyarrow._parquet, pyarrow._json, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, multidict._multidict, yarl._quoting_c, propcache._helpers_c, aiohttp._http_writer, aiohttp._http_parser, aiohttp._websocket.mask, aiohttp._websocket.reader_c, frozenlist._frozenlist, grpc._cython.cygrpc, markupsafe._speedups, PIL._imaging (total: 93)
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 
-Running 0: 0.00 row [00:01, ? row/s]                                    [36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 
-Running 0: 0.00 row [00:01, ? row/s]2025-11-18 01:10:24,304	ERROR exceptions.py:73 -- Exception occurred in Ray Data or Ray Core internal code. If you continue to see this error, please open an issue on the Ray project GitHub page with the full stack trace below: https://github.com/ray-project/ray/issues/new/choose
-2025-11-18 01:10:24,304	ERROR exceptions.py:81 -- Full stack trace:
-Traceback (most recent call last):
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/exceptions.py", line 49, in handle_trace
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/plan.py", line 460, in execute_to_iterator
-    bundle_iter = execute_to_legacy_bundle_iterator(executor, self)
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/legacy_compat.py", line 50, in execute_to_legacy_bundle_iterator
-    bundle_iter = executor.execute(dag, initial_stats=stats)
-                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/streaming_executor.py", line 177, in execute
-    self._topology, _ = build_streaming_topology(dag, self._options)
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/streaming_executor_state.py", line 440, in build_streaming_topology
-    setup_state(dag)
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/streaming_executor_state.py", line 431, in setup_state
-    parent_state = setup_state(parent)
-                   ^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/streaming_executor_state.py", line 437, in setup_state
-    op.start(options)
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/operators/actor_pool_map_operator.py", line 225, in start
-    ray.get(refs, timeout=timeout)
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_private/auto_init_hook.py", line 22, in auto_init_wrapper
-    return fn(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_private/client_mode_hook.py", line 104, in wrapper
-    return func(*args, **kwargs)
-           ^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_private/worker.py", line 2962, in get
-    values, debugger_breakpoint = worker.get_objects(
-                                  ^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_private/worker.py", line 1028, in get_objects
-    raise value
-ray.exceptions.ActorDiedError: The actor died because of an error raised in its creation task, [36mray::MapWorker(MapBatches(RPCInferenceStageUDF)).__init__()[39m (pid=23450, ip=127.0.0.1, actor_id=b9ed1d8401a58d72e86ec64a01000000, repr=MapWorker(MapBatches(RPCInferenceStageUDF)))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-RuntimeError: no running event loop
-
-During handling of the above exception, another exception occurred:
-
-[36mray::MapWorker(MapBatches(RPCInferenceStageUDF)).__init__()[39m (pid=23450, ip=127.0.0.1, actor_id=b9ed1d8401a58d72e86ec64a01000000, repr=MapWorker(MapBatches(RPCInferenceStageUDF)))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/operators/actor_pool_map_operator.py", line 538, in __init__
-    self._map_transformer.init()
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/operators/map_transformer.py", line 193, in init
-    self._init_fn()
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 360, in init_fn
-    ray.data._map_actor_context = _MapActorContext(
-                                  ^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 92, in __init__
-    self._init_async()
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 96, in _init_async
-    loop = get_or_create_event_loop()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_common/utils.py", line 79, in get_or_create_event_loop
-    return asyncio.get_event_loop_policy().get_event_loop()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/uvloop/__init__.py", line 206, in get_event_loop
-    raise RuntimeError(
-RuntimeError: There is no current event loop in thread 'MainThread'.
-Running 0: 0.00 row [00:01, ? row/s]                                    Running 0: 0.00 row [00:01, ? row/s]
-[33m(raylet)[0m Task MapWorker(MapBatches(RPCInferenceStageUDF)).get_location failed. There are infinite retries remaining, so the task will be retried. Error: The actor is temporarily unavailable: RpcError: RPC Error message: CANCELLED; RPC Error details:  rpc_code: 1
-[33m(raylet)[0m Task MapWorker(MapBatches(RPCInferenceStageUDF)).get_location failed. There are infinite retries remaining, so the task will be retried. Error: The actor is temporarily unavailable: RpcError: RPC Error message: failed to connect to all addresses; last error: UNKNOWN: ipv4:127.0.0.1:52642: Failed to connect to remote host: Connection refused; RPC Error details:  rpc_code: 14
-ray.data.exceptions.SystemException
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/Users/yanghao/develop/airecord-reference/usage.py", line 49, in <module>
-    for row in result_ds.iter_rows():
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/iterator.py", line 246, in _wrapped_iterator
-    for batch in batch_iterable:
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/iterator.py", line 190, in _create_iterator
-    ) = self._to_ref_bundle_iterator()
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/iterator/iterator_impl.py", line 27, in _to_ref_bundle_iterator
-    ref_bundles_iterator, stats = self._base_dataset._execute_to_iterator()
-                                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/dataset.py", line 6515, in _execute_to_iterator
-    bundle_iter, stats, executor = self._plan.execute_to_iterator()
-                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/exceptions.py", line 89, in handle_trace
-    raise e.with_traceback(None) from SystemException()
-ray.exceptions.ActorDiedError: The actor died because of an error raised in its creation task, [36mray::MapWorker(MapBatches(RPCInferenceStageUDF)).__init__()[39m (pid=23450, ip=127.0.0.1, actor_id=b9ed1d8401a58d72e86ec64a01000000, repr=MapWorker(MapBatches(RPCInferenceStageUDF)))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-RuntimeError: no running event loop
-
-During handling of the above exception, another exception occurred:
-
-[36mray::MapWorker(MapBatches(RPCInferenceStageUDF)).__init__()[39m (pid=23450, ip=127.0.0.1, actor_id=b9ed1d8401a58d72e86ec64a01000000, repr=MapWorker(MapBatches(RPCInferenceStageUDF)))
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/operators/actor_pool_map_operator.py", line 538, in __init__
-    self._map_transformer.init()
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/operators/map_transformer.py", line 193, in init
-    self._init_fn()
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 360, in init_fn
-    ray.data._map_actor_context = _MapActorContext(
-                                  ^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 92, in __init__
-    self._init_async()
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 96, in _init_async
-    loop = get_or_create_event_loop()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_common/utils.py", line 79, in get_or_create_event_loop
-    return asyncio.get_event_loop_policy().get_event_loop()
-           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/uvloop/__init__.py", line 206, in get_event_loop
-    raise RuntimeError(
-RuntimeError: There is no current event loop in thread 'MainThread'.
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m Exception raised in creation task: The actor died because of an error raised in its creation task, [36mray::MapWorker(MapBatches(RPCInferenceStageUDF)).__init__()[39m (pid=23458, ip=127.0.0.1, actor_id=67eeace942bc6f39258ff6ea01000000, repr=MapWorker(MapBatches(RPCInferenceStageUDF)))
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^[32m [repeated 2x across cluster] (Ray deduplicates logs by default. Set RAY_DEDUP_LOGS=0 to disable log deduplication, or see https://docs.ray.io/en/master/ray-observability/user-guides/configure-logging.html#log-deduplication for more options.)[0m
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m RuntimeError: no running event loop
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m During handling of the above exception, another exception occurred:
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [36mray::MapWorker(MapBatches(RPCInferenceStageUDF)).__init__()[39m (pid=23458, ip=127.0.0.1, actor_id=67eeace942bc6f39258ff6ea01000000, repr=MapWorker(MapBatches(RPCInferenceStageUDF)))
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 92, in __init__[32m [repeated 2x across cluster][0m
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     self._map_transformer.init()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/execution/operators/map_transformer.py", line 193, in init
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     self._init_fn()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 360, in init_fn
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     ray.data._map_actor_context = _MapActorContext(
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m                                   ^^^^^^^^^^^^^^^^^
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     self._init_async()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/data/_internal/planner/plan_udf_map_op.py", line 96, in _init_async
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     loop = get_or_create_event_loop()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_common/utils.py", line 79, in get_or_create_event_loop
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     return asyncio.get_event_loop_policy().get_event_loop()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/uvloop/__init__.py", line 206, in get_event_loop
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     raise RuntimeError(
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m RuntimeError: There is no current event loop in thread 'MainThread'.
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,940 E 23458 174786] logging.cc:125: Stack trace: 
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m  0   _raylet.so                          0x00000001136f0ba8 _ZN3raylsERNSt3__113basic_ostreamIcNS0_11char_traitsIcEEEERKNS_10StackTraceE + 84 ray::operator<<()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 1   _raylet.so                          0x00000001136f0d70 _ZN3ray16TerminateHandlerEv + 172 ray::TerminateHandler()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 2   libc++abi.dylib                     0x000000019c451710 _ZSt11__terminatePFvvE + 16 std::__terminate()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 3   libc++abi.dylib                     0x000000019c45166c _ZSt9terminatev + 36 std::terminate()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 10  _raylet.so                          0x0000000112942efc _ZL50__pyx_pw_3ray_7_raylet_10CoreWorker_5run_task_loopP7_objectPKS0_lS0_ + 40 __pyx_pw_3ray_7_raylet_10CoreWorker_5run_task_loop()[32m [repeated 3x across cluster][0m
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 6   _raylet.so                          0x0000000112a93d80 _ZN3ray4core12TaskReceiverD2Ev + 140 ray::core::TaskReceiver::~TaskReceiver()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 7   _raylet.so                          0x0000000112a64c8c _ZN3ray4core10CoreWorkerD2Ev + 816 ray::core::CoreWorker::~CoreWorker()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 8   _raylet.so                          0x0000000112ab380c _ZN3ray4core21CoreWorkerProcessImpl26RunWorkerTaskExecutionLoopEv + 292 ray::core::CoreWorkerProcessImpl::RunWorkerTaskExecutionLoop()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 9   _raylet.so                          0x0000000112ab36c0 _ZN3ray4core17CoreWorkerProcess20RunTaskExecutionLoopEv + 32 ray::core::CoreWorkerProcess::RunTaskExecutionLoop()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 11  python3.11                          0x0000000102be6f18 PyObject_Vectorcall + 76 PyObject_Vectorcall
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 12  python3.11                          0x0000000102ce9d38 _PyEval_EvalFrameDefault + 45376 _PyEval_EvalFrameDefault
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 13  python3.11                          0x0000000102cddc1c PyEval_EvalCode + 204 PyEval_EvalCode
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 14  python3.11                          0x0000000102d44080 run_mod + 144 run_mod
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 15  python3.11                          0x0000000102d43ad0 _PyRun_SimpleFileObject + 1256 _PyRun_SimpleFileObject
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 16  python3.11                          0x0000000102d42b80 _PyRun_AnyFileObject + 252 _PyRun_AnyFileObject
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 17  python3.11                          0x0000000102d6a248 pymain_run_file + 352 pymain_run_file
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 18  python3.11                          0x0000000102d69adc Py_RunMain + 2536 Py_RunMain
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 19  python3.11                          0x0000000102d6af6c pymain_main + 1284 pymain_main
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 20  python3.11                          0x0000000102b88c38 main + 56 main
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m 21  dyld                                0x000000019c11c274 start + 2840 start
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m *** SIGABRT received at time=1763399423 ***
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m PC: @        0x19c463720  (unknown)  __pthread_kill
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x112942efc  (unknown)  __pyx_pw_3ray_7_raylet_10CoreWorker_5run_task_loop()[32m [repeated 4x across cluster][0m
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x19c4d2e04  (unknown)  _sigtramp
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x19c49bf70  (unknown)  pthread_kill
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x19c3a8908  (unknown)  abort
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x1136f0d90  (unknown)  ray::TerminateHandler()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x19c451710  (unknown)  std::__terminate()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x19c45166c  (unknown)  std::terminate()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x112a93d80  (unknown)  ray::core::TaskReceiver::~TaskReceiver()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x112a64c8c  (unknown)  ray::core::CoreWorker::~CoreWorker()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x112ab380c  (unknown)  ray::core::CoreWorkerProcessImpl::RunWorkerTaskExecutionLoop()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x112ab36c0  (unknown)  ray::core::CoreWorkerProcess::RunTaskExecutionLoop()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x102be6f18  (unknown)  PyObject_Vectorcall
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x102ce9d38  (unknown)  _PyEval_EvalFrameDefault
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x102cddc1c  (unknown)  PyEval_EvalCode
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x102d44080  (unknown)  run_mod
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x102d43ad0  (unknown)  _PyRun_SimpleFileObject
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x102d42b80  (unknown)  _PyRun_AnyFileObject
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x102d6a248  (unknown)  pymain_run_file
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x102d69adc  (unknown)  Py_RunMain
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x102d6af6c  (unknown)  pymain_main
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x102b88c38  (unknown)  main
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m     @        0x19c11c274  (unknown)  start
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,941 E 23458 174786] logging.cc:474: *** SIGABRT received at time=1763399423 ***
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,941 E 23458 174786] logging.cc:474: PC: @        0x19c463720  (unknown)  __pthread_kill
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x112942efc  (unknown)  __pyx_pw_3ray_7_raylet_10CoreWorker_5run_task_loop()[32m [repeated 4x across cluster][0m
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,941 E 23458 174786] logging.cc:474:     @        0x19c4d2e04  (unknown)  _sigtramp
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,941 E 23458 174786] logging.cc:474:     @        0x19c49bf70  (unknown)  pthread_kill
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,941 E 23458 174786] logging.cc:474:     @        0x19c3a8908  (unknown)  abort
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,941 E 23458 174786] logging.cc:474:     @        0x1136f0d90  (unknown)  ray::TerminateHandler()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,941 E 23458 174786] logging.cc:474:     @        0x19c451710  (unknown)  std::__terminate()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,941 E 23458 174786] logging.cc:474:     @        0x19c45166c  (unknown)  std::terminate()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x112a93d80  (unknown)  ray::core::TaskReceiver::~TaskReceiver()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x112a64c8c  (unknown)  ray::core::CoreWorker::~CoreWorker()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x112ab380c  (unknown)  ray::core::CoreWorkerProcessImpl::RunWorkerTaskExecutionLoop()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x112ab36c0  (unknown)  ray::core::CoreWorkerProcess::RunTaskExecutionLoop()
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x102be6f18  (unknown)  PyObject_Vectorcall
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x102ce9d38  (unknown)  _PyEval_EvalFrameDefault
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x102cddc1c  (unknown)  PyEval_EvalCode
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x102d44080  (unknown)  run_mod
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x102d43ad0  (unknown)  _PyRun_SimpleFileObject
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x102d42b80  (unknown)  _PyRun_AnyFileObject
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x102d6a248  (unknown)  pymain_run_file
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x102d69adc  (unknown)  Py_RunMain
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x102d6af6c  (unknown)  pymain_main
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x102b88c38  (unknown)  main
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m [2025-11-18 01:10:23,942 E 23458 174786] logging.cc:474:     @        0x19c11c274  (unknown)  start
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m Fatal Python error: Aborted
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m Stack (most recent call first):
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_private/worker.py", line 1042 in main_loop
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m   File "/Users/yanghao/miniforge3/envs/llm-env/lib/python3.11/site-packages/ray/_private/workers/default_worker.py", line 322 in <module>
-[36m(MapWorker(MapBatches(RPCInferenceStageUDF)) pid=23458)[0m Extension modules: msgpack._cmsgpack, psutil._psutil_osx, psutil._psutil_posix, google._upb._message, charset_normalizer.md, requests.packages.charset_normalizer.md, requests.packages.chardet.md, yaml._yaml, uvloop.loop, ray._raylet, regex._regex, numpy._core._multiarray_umath, numpy.linalg._umath_linalg, pyarrow.lib, numpy.random._common, numpy.random.bit_generator, numpy.random._bounded_integers, numpy.random._pcg64, numpy.random._mt19937, numpy.random._generator, numpy.random._philox, numpy.random._sfc64, numpy.random.mtrand, pandas._libs.tslibs.ccalendar, pandas._libs.tslibs.np_datetime, pandas._libs.tslibs.dtypes, pandas._libs.tslibs.base, pandas._libs.tslibs.nattype, pandas._libs.tslibs.timezones, pandas._libs.tslibs.fields, pandas._libs.tslibs.timedeltas, pandas._libs.tslibs.tzconversion, pandas._libs.tslibs.timestamps, pandas._libs.properties, pandas._libs.tslibs.offsets, pandas._libs.tslibs.strptime, pandas._libs.tslibs.parsing, pandas._libs.tslibs.conversion, pandas._libs.tslibs.period, pandas._libs.tslibs.vectorized, pandas._libs.ops_dispatch, pandas._libs.missing, pandas._libs.hashtable, pandas._libs.algos, pandas._libs.interval, pandas._libs.lib, pyarrow._compute, pandas._libs.ops, pandas._libs.hashing, pandas._libs.arrays, pandas._libs.tslib, pandas._libs.sparse, pandas._libs.internals, pandas._libs.indexing, pandas._libs.index, pandas._libs.writers, pandas._libs.join, pandas._libs.window.aggregations, pandas._libs.window.indexers, pandas._libs.reshape, pandas._libs.groupby, pandas._libs.json, pandas._libs.parsers, pandas._libs.testing, pyarrow._fs, pyarrow._azurefs, pyarrow._hdfs, pyarrow._gcsfs, pyarrow._s3fs, pyarrow._parquet, pyarrow._json, torch._C, torch._C._dynamo.autograd_compiler, torch._C._dynamo.eval_frame, torch._C._dynamo.guards, torch._C._dynamo.utils, torch._C._fft, torch._C._linalg, torch._C._nested, torch._C._nn, torch._C._sparse, torch._C._special, multidict._multidict, yarl._quoting_c, propcache._helpers_c, aiohttp._http_writer, aiohttp._http_parser, aiohttp._websocket.mask, aiohttp._websocket.reader_c, frozenlist._frozenlist, grpc._cython.cygrpc, markupsafe._speedups, PIL._imaging (total: 93)

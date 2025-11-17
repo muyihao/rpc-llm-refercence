@@ -1,0 +1,3 @@
+ray
+pydantic
+transformers  # If needed from original
